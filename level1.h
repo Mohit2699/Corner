@@ -8,8 +8,22 @@ int level1(int framcounter)
 
     DrawText("Framecounter",100,100,10,BLACK);
 	DrawRectangle(0,400,800,200,BLACK);
+	DrawRectangle(300,300,100,10,BLACK);
 	DrawCircle(center.x,center.y,15.0,BLACK);
 	if(CheckCollisionCircleRec(center, 15.0, (Rectangle){0,400,800,200}))
+	{
+		ground=true;
+		temp=1;
+		jumping=center.y;
+	}
+	if(CheckCollisionCircleRec(center, 15.0, (Rectangle){300,300,100,10,BLACK}))
+	{
+		/*ground=true;
+		temp=1;
+		jumping=center.y;*/
+		temp=0;
+	}
+	if(CheckCollisionCircleRec(center, 15.0, (Rectangle){300,300,100,0,BLACK}))
 	{
 		ground=true;
 		temp=1;
@@ -20,9 +34,9 @@ int level1(int framcounter)
 		center.y+=5;
 	}
 	if(temp==1){
-		center.y-=10;
+		center.y-=8;
 		ground=false;
-		if(jumping-center.y==150)
+		if(jumping-center.y>150)
 		{
 			temp=0;
 		}
