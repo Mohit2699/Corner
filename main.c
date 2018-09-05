@@ -7,17 +7,23 @@ int main()
 	InitWindow(screenWidth,screenHeight,"Corner");
 	SetTargetFPS(60);
 	int framecounter;
+		 Camera2D camera;
+    
+    camera.target = (Vector2){ center.x + 20, center.y + 20 };
+    camera.offset = (Vector2){ 0, 0 };
+    camera.rotation = 0.0f;
+    camera.zoom = 1.0f;
 	while(!WindowShouldClose())
 	{	ClearBackground(WHITE);
 		BeginDrawing();
+		
+
              framecounter++;
-			 if(a==0 || a==2){
-			 	if(a==2){
-			 		framecounter=0;
-			 	}
-			 	a=level1(framecounter);      //this will load the level 1 
+			 if(a==0 ){
+			 	a=level1(&camera);      //this will load the level 1 
 			 }
-			 HideCursor();
+			 HideCursor();.
+			 EndMode2D();
 		EndDrawing();
 	}
 	CloseWindow();
