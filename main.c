@@ -22,7 +22,7 @@ int main()
 			 if(a==0 ){
 			 	a=level1(&camera);      //this will load the level 1 
 			 }
-			 HideCursor();.
+			 HideCursor();
 			 EndMode2D();
 		EndDrawing();
 	}
